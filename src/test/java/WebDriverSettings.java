@@ -16,8 +16,8 @@ public class WebDriverSettings {
         chromeDriver.manage().timeouts().pageLoadTimeout(10, TimeUnit.SECONDS);
     }
 
-//    @AfterEach
-//    public void closeBrowser(){
-//        chromeDriver.quit();
-//    }
+    @AfterEach
+    public void closeBrowser(){
+        chromeDriver.quit();
+    }
 }

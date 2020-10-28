@@ -1,5 +1,4 @@
 import org.junit.jupiter.api.Test;
-import org.openqa.selenium.support.ui.WebDriverWait;
 import pageobjects.MarketPage;
 import pageobjects.MarketSearchResultPage;
 import pageobjects.YandexMainPage;
@@ -24,13 +23,12 @@ public class Tests extends WebDriverSettings{
         marketPage.setSearchField("Xiaomi Mi Band 4");
         marketPage.clickSearchbutton();
 
-        System.out.println(chromeDriver.getWindowHandles().size());
 
         chromeDriver.manage().timeouts().implicitlyWait(10,TimeUnit.SECONDS);
+
         MarketSearchResultPage searchResultPage = new MarketSearchResultPage(chromeDriver);
-        searchResultPage.getWebDriver().manage().timeouts().implicitlyWait(10,TimeUnit.SECONDS);
         searchResultPage.chooseMyRegionButton();
-        searchResultPage.getWebDriver().manage().timeouts().pageLoadTimeout(10,TimeUnit.SECONDS);
+
         CustomUtils.getScreen(searchResultPage.getWebDriver());
 
     }
